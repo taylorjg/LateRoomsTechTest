@@ -8,13 +8,13 @@
 
 <body>
     <div class="container" ng-controller="HomeController as vm">
-        <ul>
-            <li ng-repeat="city in vm.cities">{{ city.City }} ({{ city.Country }})
-                <ul>
-                    <li ng-repeat="attraction in city.Attractions">{{ attraction }}</li>
-                </ul>
-            </li>
-        </ul>
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6">
+                <div ng-repeat="city in vm.cities">
+                    <div city="city"></div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 

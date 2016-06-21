@@ -13,9 +13,8 @@ module.exports = {
         filename: 'bundle.js'
     },
     plugins: [
-        //new CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
         new HtmlWebpackPlugin({ template: './client/index.html' }),
-        //new CopyWebpackPlugin([ { from: './client/styles.css', to: 'styles.css' } ])
+        new CopyWebpackPlugin([ { from: './client/templates', to: 'templates' } ])
     ],
     resolve: {
         extensions: ['', '.js']
