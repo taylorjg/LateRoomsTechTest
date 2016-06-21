@@ -19,14 +19,14 @@
             <input id="attraction" type="text" class="form-control" name="attractionControl" ng-required="false" ng-model="vm.attraction"
             />
             <br />
-            <button type="button" id="addAttractionBtn" class="btn btn-sm" ng-click="vm.onAddAttraction()">Add</button>
+            <button type="button" id="addAttractionBtn" class="btn btn-sm btn-primary" ng-click="vm.onAddAttraction()">Add</button>
         </div>
-        <div>
+        <div ng-show="vm.item.attractions.length">
             Attractions:
             <ul>
                 <li ng-repeat="attraction in vm.item.attractions">
                     {{ attraction }}
-                    <span ng-click="vm.onRemoveAttraction($index)">&times;</span>
+                    <span class="glyphicon glyphicon-remove" ng-click="vm.onRemoveAttraction($index)" aria-hidden="true"></span>
                 </li>
             </ul>
         </div>
@@ -34,6 +34,6 @@
 
     <div class="modal-footer">
         <button type="submit" id="okBtn" class="btn btn-sm btn-primary" ng-click="vm.onOk()">OK</button>
-        <button type="button" id="cancelBtn" class="btn btn-sm" ng-click="vm.onCancel()">Cancel</button>
+        <button type="button" id="cancelBtn" class="btn btn-sm btn-warning" ng-click="vm.onCancel()">Cancel</button>
     </div>
 </form>

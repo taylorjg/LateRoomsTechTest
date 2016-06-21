@@ -8,14 +8,14 @@ function AddCityDialogController($uibModalInstance) {
     vm.onAddAttraction = onAddAttraction;
     vm.onRemoveAttraction = onRemoveAttraction;
     vm.item = {
-        city: 'Paris',
-        country: 'France',
-        attractions: ['Eiffel Tower', 'River Seine']
+        city: '',
+        country: '',
+        attractions: []
     };
     vm.attraction = '';
 
     function onOk() {
-        $uibModalInstance.close('Blah');
+        $uibModalInstance.close(vm.item);
     }
 
     function onCancel() {

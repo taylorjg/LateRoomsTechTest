@@ -14,9 +14,7 @@ function HomeController($uibModal, CitiesService) {
             controller: 'AddCityDialogController',
             controllerAs: 'vm'
         });
-        modalInstance.result.then(result => {
-            console.log('result: %s', result);
-        });
+        modalInstance.result.then(city => console.dir(city));
     }
 }
 
