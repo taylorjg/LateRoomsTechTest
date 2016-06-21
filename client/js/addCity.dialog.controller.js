@@ -1,5 +1,3 @@
-'use strict';
-
 function AddCityDialogController($uibModalInstance) {
 
     const vm = this;

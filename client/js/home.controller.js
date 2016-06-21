@@ -1,5 +1,3 @@
-'use strict';
-
 function HomeController($uibModal, CitiesService) {
 
     const vm = this;

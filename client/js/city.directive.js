@@ -1,5 +1,3 @@
-'use strict';
-
 function city() {
     return {
         restrict: 'A',

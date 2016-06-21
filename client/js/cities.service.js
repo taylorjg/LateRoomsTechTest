@@ -1,5 +1,3 @@
-'use strict';
-
 function CitiesService($http) {
 
     function getCities() {

@@ -1,5 +1,3 @@
-'use strict';
-
 const angular = require('angular');
 const uiBootstrap = require('angular-ui-bootstrap/dist/ui-bootstrap');
 const uiBootstrapTpls = require('angular-ui-bootstrap/dist/ui-bootstrap-tpls');
