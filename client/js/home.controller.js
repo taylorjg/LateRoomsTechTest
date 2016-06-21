@@ -4,9 +4,14 @@ function HomeController($uibModal, CitiesService) {
 
     const vm = this;
     vm.cities = [];
+    vm.visitedCityCount = visitedCityCount; 
     vm.onAdd = onAdd;
 
     CitiesService.getCities().then(response => vm.cities = response.data);
+
+    function visitedCityCount() {
+        return vm.cities.filter(city => city.Visited).length;
+    }
 
     function onAdd() {
         const modalInstance = $uibModal.open({
