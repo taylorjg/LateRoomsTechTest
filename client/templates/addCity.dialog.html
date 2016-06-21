@@ -1,0 +1,29 @@
+<div class="modal-header">
+    <button id="closeBtn" type="button" class="close" ng-click="vm.onCancel()">&times;</button>
+    <h3>Add City</h3>
+</div>
+
+<div ng-form class="form-horizontal" name="addCityForm">
+    <div class="modal-body">
+        
+        <div class="control-group">
+            <label class="control-label" for="city">City</label>
+            <div class="controls">
+                <input id="city" type="text" class="span3" name="cityControl" ng-required="true" ng-model="vm.city" />
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label" for="country">Country</label>
+            <div class="controls">
+                <input id="country" type="text" class="span3" name="countryControl" ng-required="true" ng-model="vm.country" />
+            </div>
+        </div>
+
+    </div>
+
+    <div class="modal-footer">
+        <button id="okBtn" class="btn btn-sm btn-primary" ng-click="vm.onOk()">OK</button>
+        <button id="cancelBtn" class="btn btn-sm" ng-click="vm.onCancel()">Cancel</button>
+    </div>
+</div>
