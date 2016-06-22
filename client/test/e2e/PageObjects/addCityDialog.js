@@ -15,6 +15,18 @@ function AddCityDialog() {
     this.attractions = function () {
         return element.all(by.repeater('attraction in vm.item.attractions'));
     }
+
+    this.addAttractionBtn = function () {
+        return element(by.id('addAttractionBtn'));
+    }
+
+    this.okBtn = function () {
+        return element(by.id('okBtn'));
+    }
+
+    this.cancelBtn = function () {
+        return element(by.id('cancelBtn'));
+    }
 }
 
 module.exports = AddCityDialog

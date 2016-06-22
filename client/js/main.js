@@ -5,6 +5,7 @@ const homeController = require('./home.controller');
 const addCityDialogController = require('./addCity.dialog.controller');
 const citiesService = require('./cities.service');
 const cityDirective = require('./city.directive');
+const dev = require('../test/e2e/httpBackendSetup');
 
 const app = angular.module('appLateRoomsTechTest', ['ui.bootstrap']);
 

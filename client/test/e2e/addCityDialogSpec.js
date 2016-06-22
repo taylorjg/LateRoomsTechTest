@@ -11,11 +11,21 @@ describe('Add City Dialog', function () {
         addCityDialog = new AddCityDialog();
     });
 
-    it('clicking Add City button shows the Add City dialog', function () {
+    it('clicking the Add City button displays the Add City dialog', function () {
         mainPage.get();
         mainPage.addCityBtn().click();
         expect(addCityDialog.city().isPresent()).toBe(true);
         expect(addCityDialog.country().isPresent()).toBe(true);
         expect(addCityDialog.attraction().isPresent()).toBe(true);
+    });
+
+    it('can add a new city with no attractions', function () {
+        mainPage.get(1);
+        expect(mainPage.cityListItems().count()).toBe(5);
+        mainPage.addCityBtn().click();
+        addCityDialog.city().sendKeys('Paris');
+        addCityDialog.country().sendKeys('France');
+        addCityDialog.okBtn().click();
+        expect(mainPage.cityListItems().count()).toBe(6);
     });
 });
