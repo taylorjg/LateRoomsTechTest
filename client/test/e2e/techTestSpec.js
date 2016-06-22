@@ -11,7 +11,7 @@ describe('LateRooms full-stack tech test spec', function () {
         addCityDialog = new AddCityDialog();
     });
 
-    describe('initial page load', function () {
+    describe('Retrieve the cities from the endpoint you created and list them along with their country and attractions', function () {
 
         it('should initially load 5 cities', function () {
             mainPage.get();
@@ -29,7 +29,7 @@ describe('LateRooms full-stack tech test spec', function () {
         });
     });
 
-    describe('adding a new city', function () {
+    describe('Ability to add a new city to the list', function () {
 
         it('clicking the Add City button displays the Add City dialog', function () {
             mainPage.get();
@@ -68,5 +68,29 @@ describe('LateRooms full-stack tech test spec', function () {
             expect(attractions.get(0).element(by.binding('attraction')).getText()).toBe('Euro 2016');
             expect(attractions.get(1).element(by.binding('attraction')).getText()).toBe('Champagne');
         });
+
+        describe('Provide basic validation', function() {
+            // TODO
+        });
+    });
+
+    describe('Allow a user to mark a city as visited/unvisited', function() {
+        // TODO
+    });
+
+    describe('Show a visual counter of the number of cities visited/unvisited', function() {
+        // TODO
+    });
+
+    describe('Filter the cities by visited state (i.e. visited or unvisited)', function() {
+        // TODO
+    });
+
+    describe('Sort the cities by visited state (i.e. visited or unvisited)', function() {
+        // TODO
+    });
+
+    describe('Search for city by attraction or country', function() {
+        // TODO
     });
 });
