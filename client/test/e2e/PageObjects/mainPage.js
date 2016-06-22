@@ -19,7 +19,7 @@ function MainPage() {
     }
 
     this.cityListItems = function () {
-        return element.all(by.repeater('city in vm.cities'));
+        return element.all(by.repeater('city in vm.filteredCities()'));
     }
 
     this.visitedCityCount = function() {

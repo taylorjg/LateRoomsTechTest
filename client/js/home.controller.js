@@ -3,12 +3,29 @@ function HomeController($uibModal, CitiesService) {
     const vm = this;
     vm.filter = "all";
     vm.cities = [];
+    vm.filteredCities = filteredCities;
     vm.visitedCityCount = visitedCityCount;
     vm.unvisitedCityCount = unvisitedCityCount;
     vm.onUpdateCity = onUpdateCity;
     vm.onAdd = onAdd;
 
-    CitiesService.getCities().then(response => vm.cities = response.data);
+    getCities();
+
+    function getCities() {
+        CitiesService.getCities().then(response => vm.cities = response.data);
+    }
+
+    function filteredCities() {
+        switch (vm.filter) {
+            case "visited":
+                return vm.cities.filter(city => city.Visited);
+            case "unvisited":
+                return vm.cities.filter(city => !city.Visited);
+            case "all":
+            default:
+                return vm.cities;
+        }
+    }
 
     function visitedCityCount() {
         return vm.cities.filter(city => city.Visited).length;
@@ -24,19 +41,14 @@ function HomeController($uibModal, CitiesService) {
             controller: 'AddCityDialogController',
             controllerAs: 'vm'
         });
-        modalInstance.result.then(city => {
-            CitiesService.addCity(city).then(_ => {
-                CitiesService.getCities().then(response =>
-                    vm.cities = response.data);
-            });
-        });
+        modalInstance.result.then(city =>
+            CitiesService.addCity(city).then(_ =>
+                getCities()));
     }
 
     function onUpdateCity(city) {
-        console.log(`onUpdateCity - ${JSON.stringify(city)}`);
         CitiesService.updateCity(city).then(_ =>
-            CitiesService.getCities().then(response =>
-                vm.cities = response.data));
+            getCities());
     }
 }
 

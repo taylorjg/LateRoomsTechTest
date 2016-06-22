@@ -108,7 +108,7 @@ describe('LateRooms full-stack tech test spec', function () {
         });
     });
 
-    ddescribe('Filter the cities by visited state (i.e. visited or unvisited)', function() {
+    describe('Filter the cities by visited state (i.e. visited or unvisited)', function() {
 
         it('can filter to show only visited cities', function() {
             mainPage.get();
