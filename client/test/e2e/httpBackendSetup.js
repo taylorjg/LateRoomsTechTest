@@ -22,6 +22,7 @@ function httpBackendSetup($httpBackend) {
         const city = angular.fromJson(data);
         city.Visited = false;
         cities.push(city);
+        console.log(`whenPOST('api/cities'): adding ${JSON.stringify(city)}`);
         return [200, city, {}];
     });
 }
