@@ -1,5 +1,8 @@
 <li class="list-group-item" ng-class="{ 'list-group-item-success': vm.city.Visited }">
-    <span ng-bind="vm.city.City"></span> <i><span class="label label-primary" ng-bind="vm.city.Country" /></i>
+    <div>
+        <span class="cityHeading" ng-bind="vm.city.City"></span>
+        <i><span class="label label-primary" ng-bind="vm.city.Country" /></i>
+    </div>
     <div>
         Attractions:
         <ul class="list-inline">

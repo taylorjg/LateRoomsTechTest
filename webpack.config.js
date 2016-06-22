@@ -14,7 +14,8 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({ template: './client/index.html' }),
-        new CopyWebpackPlugin([ { from: './client/templates', to: 'templates' } ])
+        new CopyWebpackPlugin([ { from: './client/templates', to: 'templates' } ]),
+        new CopyWebpackPlugin([ { from: './client/css/styles.css', to: 'styles.css' } ])
     ],
     resolve: {
         extensions: ['', '.js']
