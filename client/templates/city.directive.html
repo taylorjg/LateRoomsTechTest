@@ -1,6 +1,9 @@
 <li class="list-group-item" ng-class="{ 'list-group-item-success': vm.city.Visited }">
-    <span ng-bind="vm.city.City" /> (<span ng-bind="vm.city.Country" />)
-    <ul>
-        <li ng-repeat="attraction in vm.city.Attractions"><span ng-bind="attraction" /></li>
-    </ul>
+    <span ng-bind="vm.city.City"></span> <i><span class="label label-primary" ng-bind="vm.city.Country" /></i>
+    <div>
+        Attractions:
+        <ul class="list-inline">
+            <li ng-repeat="attraction in vm.city.Attractions"><span class="badge" ng-bind="attraction" /></li>
+        </ul>
+    </div>
 </li>
