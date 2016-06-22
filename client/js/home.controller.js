@@ -1,6 +1,7 @@
 function HomeController($uibModal, CitiesService) {
 
     const vm = this;
+    vm.filter = "all";
     vm.cities = [];
     vm.visitedCityCount = visitedCityCount;
     vm.unvisitedCityCount = unvisitedCityCount;

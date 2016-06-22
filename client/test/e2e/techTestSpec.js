@@ -108,8 +108,30 @@ describe('LateRooms full-stack tech test spec', function () {
         });
     });
 
-    describe('Filter the cities by visited state (i.e. visited or unvisited)', function() {
-        // TODO
+    ddescribe('Filter the cities by visited state (i.e. visited or unvisited)', function() {
+
+        it('can filter to show only visited cities', function() {
+            mainPage.get();
+            expect(mainPage.cityListItems().count()).toBe(5);
+            mainPage.visitedRadio().click();
+            expect(mainPage.cityListItems().count()).toBe(2);
+        });
+
+        it('can filter to show only unvisited cities', function() {
+            mainPage.get();
+            expect(mainPage.cityListItems().count()).toBe(5);
+            mainPage.unvisitedRadio().click();
+            expect(mainPage.cityListItems().count()).toBe(3);
+        });
+
+        it('can filter to show all cities', function() {
+            mainPage.get();
+            expect(mainPage.cityListItems().count()).toBe(5);
+            mainPage.visitedRadio().click();
+            expect(mainPage.cityListItems().count()).toBe(2);
+            mainPage.allRadio().click();
+            expect(mainPage.cityListItems().count()).toBe(5);
+        });
     });
 
     describe('Sort the cities by visited state (i.e. visited or unvisited)', function() {

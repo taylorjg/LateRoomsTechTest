@@ -13,6 +13,28 @@
     <div class="container" ng-controller="HomeController as vm">
         <div class="row">
             <div class="col-md-offset-3 col-md-6">
+                <fieldset>
+                    <legend>Filter</legend>
+                    <label>
+                        <input id="allRadio" type="radio" name="filter" value="all" ng-model="vm.filter">
+                        All
+                    </label>
+                    &nbsp;
+                    <label>
+                        <input id="visitedRadio" type="radio" name="filter" value="visited" ng-model="vm.filter">
+                        Visited
+                    </label>
+                    &nbsp;
+                    <label>
+                        <input id="unvisitedRadio" type="radio" name="filter" value="unvisited" ng-model="vm.filter">
+                        Unvisited
+                    </label>
+                </fieldset>
+                <hr />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
                         <h3 class="panel-title">Cities</h3>

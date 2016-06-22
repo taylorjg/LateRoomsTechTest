@@ -6,6 +6,18 @@ function MainPage() {
         browser.get(baseUrl);
     }
 
+    this.allRadio = function() {
+        return element(by.id('allRadio'));
+    }
+
+    this.visitedRadio = function() {
+        return element(by.id('visitedRadio'));
+    }
+
+    this.unvisitedRadio = function() {
+        return element(by.id('unvisitedRadio'));
+    }
+
     this.cityListItems = function () {
         return element.all(by.repeater('city in vm.cities'));
     }
