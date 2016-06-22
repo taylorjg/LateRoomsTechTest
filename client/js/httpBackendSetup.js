@@ -21,7 +21,6 @@ function httpBackendSetup($httpBackend) {
 
     $httpBackend.whenPOST('api/cities').respond(function(method, url, data) {
         const city = angular.fromJson(data);
-        city.Visited = false;
         console.log(`whenPOST('${url}'): adding ${JSON.stringify(city)}`);
         cities.push(city);
         return [200, city, {}];

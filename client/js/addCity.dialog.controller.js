@@ -8,7 +8,8 @@ function AddCityDialogController($uibModalInstance) {
     vm.item = {
         City: '',
         Country: '',
-        Attractions: []
+        Attractions: [],
+        Visited: false
     };
     vm.attraction = '';
 

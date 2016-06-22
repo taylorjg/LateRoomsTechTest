@@ -1,8 +1,9 @@
 <li class="list-group-item" ng-class="{ 'list-group-item-success': vm.city.Visited }">
-    <div>
-        <span class="cityHeading" ng-bind="vm.city.City"></span>
-        <i><span class="label label-primary" ng-bind="vm.city.Country" /></i>
-    </div>
+    <span class="cityHeading" ng-bind="vm.city.City"></span>
+    <i><span class="label label-primary" ng-bind="vm.city.Country" /></i>
+    <span class="pull-right">
+        <label>Visited: <input type="checkbox" ng-checked="vm.city.Visited" name="visited"></label>
+    </span>
     <div>
         Attractions:
         <ul class="list-inline">

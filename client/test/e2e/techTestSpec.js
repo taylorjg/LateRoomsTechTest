@@ -75,7 +75,24 @@ describe('LateRooms full-stack tech test spec', function () {
     });
 
     describe('Allow a user to mark a city as visited/unvisited', function() {
-        // TODO
+
+        it('can mark a city as visited', function() {
+            mainPage.get();
+            const liverpool = mainPage.cityListItems().get(1);
+            const visitedCheckbox = liverpool.element(by.css('[ng-checked]'));
+            checkIsUnvisited(liverpool);
+            visitedCheckbox.click(); 
+            checkIsVisited(liverpool);
+        });
+
+        it('can mark a city as unvisited', function() {
+            mainPage.get();
+            const york = mainPage.cityListItems().get(2); 
+            const visitedCheckbox = york.element(by.css('[ng-checked]'));
+            checkIsVisited(york);
+            visitedCheckbox.click(); 
+            checkIsUnvisited(york);
+        });
     });
 
     describe('Show a visual counter of the number of cities visited/unvisited', function() {
@@ -102,4 +119,22 @@ describe('LateRooms full-stack tech test spec', function () {
     describe('Search for city by attraction or country', function() {
         // TODO
     });
+
+    function checkIsVisited(city) {
+        checkVisitedFlag(city, true);
+    }
+
+    function checkIsUnvisited(city) {
+        checkVisitedFlag(city, false);
+    }
+
+    function checkVisitedFlag(city, isVisited) {
+        var attr = city.getAttribute('class');
+        if (isVisited) {
+            expect(attr).toContain('list-group-item-success');
+        }
+        else {
+            expect(attr).not.toContain('list-group-item-success');
+        }
+    }
 });
