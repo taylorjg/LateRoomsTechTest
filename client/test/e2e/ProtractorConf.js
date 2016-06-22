@@ -1,9 +1,6 @@
 exports.config = {
     seleniumAddress: 'http://localhost:4444/wd/hub',
-    specs: [
-        'mainPageSpec.js',
-        'addCityDialogSpec.js'
-    ],
+    specs: ['techTestSpec.js'],
     framework: 'jasmine',
     onPrepare: function () {
         var disableNgAnimate = function () {
