@@ -20,12 +20,32 @@ describe('Add City Dialog', function () {
     });
 
     it('can add a new city with no attractions', function () {
-        mainPage.get(1);
+        mainPage.get();
         expect(mainPage.cityListItems().count()).toBe(5);
         mainPage.addCityBtn().click();
         addCityDialog.city().sendKeys('Paris');
         addCityDialog.country().sendKeys('France');
         addCityDialog.okBtn().click();
         expect(mainPage.cityListItems().count()).toBe(6);
+    });
+
+    it('can add a new city with attractions', function () {
+        mainPage.get();
+        expect(mainPage.cityListItems().count()).toBe(5);
+        mainPage.addCityBtn().click();
+        addCityDialog.city().sendKeys('Paris');
+        addCityDialog.country().sendKeys('France');
+        addCityDialog.attraction().sendKeys('Euro 2016');
+        addCityDialog.addAttractionBtn().click();
+        addCityDialog.attraction().sendKeys('Champagne');
+        addCityDialog.addAttractionBtn().click();
+        addCityDialog.okBtn().click();
+        expect(mainPage.cityListItems().count()).toBe(6);
+        const lastCity = mainPage.cityListItems().last(); 
+        expect(lastCity.element(by.binding('vm.city.City')).getText()).toBe('Paris');
+        expect(lastCity.element(by.binding('vm.city.Country')).getText()).toBe('France');
+        const attractions = lastCity.all(by.repeater('attraction in vm.city.Attractions'));
+        expect(attractions.get(0).element(by.binding('attraction')).getText()).toBe('Euro 2016');
+        expect(attractions.get(1).element(by.binding('attraction')).getText()).toBe('Champagne');
     });
 });

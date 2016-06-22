@@ -1,6 +1,6 @@
 <li class="list-group-item" ng-class="{ 'list-group-item-success': vm.city.Visited }">
-    {{ vm.city.City }} ({{ vm.city.Country }})
+    <span ng-bind="vm.city.City" /> (<span ng-bind="vm.city.Country" />)
     <ul>
-        <li ng-repeat="attraction in vm.city.Attractions">{{ attraction }}</li>
+        <li ng-repeat="attraction in vm.city.Attractions"><span ng-bind="attraction" /></li>
     </ul>
 </li>

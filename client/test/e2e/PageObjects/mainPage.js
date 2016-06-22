@@ -2,13 +2,8 @@ var baseUrl = 'http://localhost:3000/index.html';
 
 function MainPage() {
 
-    this.get = function (testId) {
-        if (testId) {
-            browser.get(baseUrl + '?testId=' + testId);
-        }
-        else {
-            browser.get(baseUrl);
-        }
+    this.get = function () {
+        browser.get(baseUrl);
     }
 
     this.cityListItems = function () {
