@@ -79,7 +79,16 @@ describe('LateRooms full-stack tech test spec', function () {
     });
 
     describe('Show a visual counter of the number of cities visited/unvisited', function() {
-        // TODO
+
+        it('displays the correct number of visited cities initially', function() {
+            mainPage.get();
+            expect(mainPage.visitedCityCount().getText()).toBe('2');
+        });
+
+        it('displays the correct number of unvisited cities initially', function() {
+            mainPage.get();
+            expect(mainPage.unvisitedCityCount().getText()).toBe('3');
+        });
     });
 
     describe('Filter the cities by visited state (i.e. visited or unvisited)', function() {
