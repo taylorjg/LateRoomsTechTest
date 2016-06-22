@@ -19,7 +19,7 @@
                     </div>
                     <div class="panel-body">
                         <ul class="list-group">
-                            <div ng-repeat="city in vm.cities" city="city" ></div>
+                            <div ng-repeat="city in vm.cities" city="city" on-update-city="vm.onUpdateCity(city)"></div>
                         </ul>
                     </div>
                 </div>

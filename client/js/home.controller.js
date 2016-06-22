@@ -4,6 +4,7 @@ function HomeController($uibModal, CitiesService) {
     vm.cities = [];
     vm.visitedCityCount = visitedCityCount;
     vm.unvisitedCityCount = unvisitedCityCount;
+    vm.onUpdateCity = onUpdateCity;
     vm.onAdd = onAdd;
 
     CitiesService.getCities().then(response => vm.cities = response.data);
@@ -28,6 +29,13 @@ function HomeController($uibModal, CitiesService) {
                     vm.cities = response.data);
             });
         });
+    }
+
+    function onUpdateCity(city) {
+        console.log(`onUpdateCity - ${JSON.stringify(city)}`);
+        CitiesService.updateCity(city).then(_ =>
+            CitiesService.getCities().then(response =>
+                vm.cities = response.data));
     }
 }
 

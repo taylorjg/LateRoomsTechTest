@@ -2,7 +2,7 @@
     <span class="cityHeading" ng-bind="vm.city.City"></span>
     <i><span class="label label-primary" ng-bind="vm.city.Country" /></i>
     <span class="pull-right">
-        <label>Visited: <input type="checkbox" ng-checked="vm.city.Visited" name="visited"></label>
+        <label>Visited: <input type="checkbox" ng-model="vm.city.Visited" name="visited" ng-change="vm.onUpdateCity(vm.city)"></label>
     </span>
     <div>
         Attractions:

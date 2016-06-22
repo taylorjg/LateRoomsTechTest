@@ -4,7 +4,8 @@ function city() {
         templateUrl: 'templates/city.directive.html',
         replace: true,
         scope: {
-            city: '='
+            city: '=',
+            onUpdateCity: '&'
         },
         controller: function() {
         },

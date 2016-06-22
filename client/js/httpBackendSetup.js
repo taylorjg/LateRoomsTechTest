@@ -5,8 +5,10 @@ app.run(httpBackendSetup);
 
 httpBackendSetup.$inject = ['$httpBackend'];
 
+let nextId = 0;
 const initial_cities = require('./initialCities');
 const cities = initial_cities.map(city => {
+    city.Id = nextId++;
     city.Visited = city.City.length < 8;
     return city;
 });
@@ -21,8 +23,20 @@ function httpBackendSetup($httpBackend) {
 
     $httpBackend.whenPOST('api/cities').respond(function(method, url, data) {
         const city = angular.fromJson(data);
-        console.log(`whenPOST('${url}'): adding ${JSON.stringify(city)}`);
+        city.Id = nextId++;
+        console.log(`whenPOST('${url}'): adding city ${JSON.stringify(city)}`);
         cities.push(city);
+        return [201, city, {}];
+    });
+
+    $httpBackend.whenPOST(/api\/cities\/\d+/).respond(function(method, url, data) {
+        const city = angular.fromJson(data);
+        console.log(`whenPOST('${url}'): updating city ${JSON.stringify(city)}`);
+        const index = cities.findIndex(c => c.Id === city.Id);
+        if (index < 0) {
+            return [404, city, {}];
+        }
+        cities[index] = city;
         return [200, city, {}];
     });
 }

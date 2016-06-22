@@ -79,7 +79,7 @@ describe('LateRooms full-stack tech test spec', function () {
         it('can mark a city as visited', function() {
             mainPage.get();
             const liverpool = mainPage.cityListItems().get(1);
-            const visitedCheckbox = liverpool.element(by.css('[ng-checked]'));
+            const visitedCheckbox = liverpool.element(by.model('vm.city.Visited'));
             checkIsUnvisited(liverpool);
             visitedCheckbox.click(); 
             checkIsVisited(liverpool);
@@ -88,7 +88,7 @@ describe('LateRooms full-stack tech test spec', function () {
         it('can mark a city as unvisited', function() {
             mainPage.get();
             const york = mainPage.cityListItems().get(2); 
-            const visitedCheckbox = york.element(by.css('[ng-checked]'));
+            const visitedCheckbox = york.element(by.model('vm.city.Visited'));
             checkIsVisited(york);
             visitedCheckbox.click(); 
             checkIsUnvisited(york);
