@@ -1,11 +1,11 @@
 function AddCityDialog() {
 
     this.city = function () {
-        return element(by.model('vm.item.city'));
+        return element(by.model('vm.item.City'));
     }
 
     this.country = function () {
-        return element(by.model('vm.item.country'));
+        return element(by.model('vm.item.Country'));
     }
 
     this.attraction = function () {
@@ -13,7 +13,7 @@ function AddCityDialog() {
     }
 
     this.attractions = function () {
-        return element.all(by.repeater('attraction in vm.item.attractions'));
+        return element.all(by.repeater('attraction in vm.item.Attractions'));
     }
 
     this.addAttractionBtn = function () {

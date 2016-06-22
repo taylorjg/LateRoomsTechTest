@@ -18,8 +18,9 @@ function httpBackendSetup($httpBackend) {
     $httpBackend.whenGET(URL_REGEXP_FOR_ALL_HTML_FILES).passThrough();
 
     $httpBackend.whenGET('api/cities').respond(cities);
-    $httpBackend.whenPOST('api/cities').respond((method, url, data) => {
+    $httpBackend.whenPOST('api/cities').respond(function(method, url, data) {
         const city = angular.fromJson(data);
+        city.Visited = false;
         cities.push(city);
         return [200, city, {}];
     });

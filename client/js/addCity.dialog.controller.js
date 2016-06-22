@@ -6,9 +6,9 @@ function AddCityDialogController($uibModalInstance) {
     vm.onAddAttraction = onAddAttraction;
     vm.onRemoveAttraction = onRemoveAttraction;
     vm.item = {
-        city: '',
-        country: '',
-        attractions: []
+        City: '',
+        Country: '',
+        Attractions: []
     };
     vm.attraction = '';
 
@@ -21,12 +21,12 @@ function AddCityDialogController($uibModalInstance) {
     }
 
     function onAddAttraction() {
-        vm.item.attractions.push(vm.attraction);
+        vm.item.Attractions.push(vm.attraction);
         vm.attraction = '';
     }
 
     function onRemoveAttraction(index) {
-        vm.item.attractions.splice(index, 1);
+        vm.item.Attractions.splice(index, 1);
     }
 }
 

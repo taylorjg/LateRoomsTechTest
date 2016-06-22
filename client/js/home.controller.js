@@ -2,7 +2,7 @@ function HomeController($uibModal, CitiesService) {
 
     const vm = this;
     vm.cities = [];
-    vm.visitedCityCount = visitedCityCount; 
+    vm.visitedCityCount = visitedCityCount;
     vm.onAdd = onAdd;
 
     CitiesService.getCities().then(response => vm.cities = response.data);
@@ -17,7 +17,12 @@ function HomeController($uibModal, CitiesService) {
             controller: 'AddCityDialogController',
             controllerAs: 'vm'
         });
-        modalInstance.result.then(city => console.dir(city));
+        modalInstance.result.then(city => {
+            CitiesService.addCity(city).then(_ => {
+                CitiesService.getCities().then(response =>
+                    vm.cities = response.data);
+            });
+        });
     }
 }
 
