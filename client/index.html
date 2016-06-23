@@ -5,6 +5,7 @@
     <title>LateRooms Full-Stack Tech Test</title>
     <link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.css">
     <link rel="stylesheet" href="styles.css">
+    <style>[ng-cloak] { display: none; }</style>
 </head>
 
 <body>
@@ -34,7 +35,6 @@
             </div>
         </div>
         <div class="row" id="sortingPanel" ng-show="vm.showSortingPanel()">
-            {{ vm.sort }}
             <div class="col-md-offset-3 col-md-6">
                 <fieldset>
                     <legend>Sort by</legend>
@@ -70,10 +70,10 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row" ng-cloak>
             <div class="col-md-offset-3 col-md-6">
-                <span>Visited cities: <span class="badge">{{ vm.visitedCityCount() }}</span></span>
-                <span class="pull-right">Unvisited cities: <span class="badge">{{ vm.unvisitedCityCount() }}</span></span>
+                <span>Visited cities: <span class="badge alert-success">{{ vm.visitedCityCount() }}</span></span>
+                <span class="pull-right">Unvisited cities: <span class="badge alert-danger">{{ vm.unvisitedCityCount() }}</span></span>
             </div>
         </div>
         <div class="row">
