@@ -16,17 +16,34 @@
                 <fieldset>
                     <legend>Filter</legend>
                     <label>
-                        <input id="allRadio" type="radio" name="filter" value="all" ng-model="vm.filter">
+                        <input id="allFilterRadio" type="radio" name="filter" value="all" ng-model="vm.filter">
                         All
                     </label>
                     &nbsp;
                     <label>
-                        <input id="visitedRadio" type="radio" name="filter" value="visited" ng-model="vm.filter">
+                        <input id="visitedFilterRadio" type="radio" name="filter" value="visited" ng-model="vm.filter">
                         Visited
                     </label>
                     &nbsp;
                     <label>
-                        <input id="unvisitedRadio" type="radio" name="filter" value="unvisited" ng-model="vm.filter">
+                        <input id="unvisitedFilterRadio" type="radio" name="filter" value="unvisited" ng-model="vm.filter">
+                        Unvisited
+                    </label>
+                </fieldset>
+                <hr />
+            </div>
+        </div>
+        <div class="row" id="sortingPanel">
+            <div class="col-md-offset-3 col-md-6">
+                <fieldset>
+                    <legend>Sort by</legend>
+                    <label>
+                        <input id="visitedSortRadio" type="radio" name="sort" value="visited" ng-model="vm.sort">
+                        Visited
+                    </label>
+                    &nbsp;
+                    <label>
+                        <input id="unvisitedSortRadio" type="radio" name="sort" value="unvisited" ng-model="vm.sort">
                         Unvisited
                     </label>
                 </fieldset>

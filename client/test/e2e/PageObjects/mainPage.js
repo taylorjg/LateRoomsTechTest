@@ -6,16 +6,20 @@ function MainPage() {
         browser.get(baseUrl);
     }
 
-    this.allRadio = function() {
-        return element(by.id('allRadio'));
+    this.allFilterRadio = function() {
+        return element(by.id('allFilterRadio'));
     }
 
-    this.visitedRadio = function() {
-        return element(by.id('visitedRadio'));
+    this.visitedFilterRadio = function() {
+        return element(by.id('visitedFilterRadio'));
     }
 
-    this.unvisitedRadio = function() {
-        return element(by.id('unvisitedRadio'));
+    this.unvisitedFilterRadio = function() {
+        return element(by.id('unvisitedFilterRadio'));
+    }
+
+    this.sortingPanel = function() {
+        return element(by.id('sortingPanel'));
     }
 
     this.cityListItems = function () {

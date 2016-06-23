@@ -113,29 +113,47 @@ describe('LateRooms full-stack tech test spec', function () {
         it('can filter to show only visited cities', function() {
             mainPage.get();
             expect(mainPage.cityListItems().count()).toBe(5);
-            mainPage.visitedRadio().click();
+            mainPage.visitedFilterRadio().click();
             expect(mainPage.cityListItems().count()).toBe(2);
         });
 
         it('can filter to show only unvisited cities', function() {
             mainPage.get();
             expect(mainPage.cityListItems().count()).toBe(5);
-            mainPage.unvisitedRadio().click();
+            mainPage.unvisitedFilterRadio().click();
             expect(mainPage.cityListItems().count()).toBe(3);
         });
 
         it('can filter to show all cities', function() {
             mainPage.get();
             expect(mainPage.cityListItems().count()).toBe(5);
-            mainPage.visitedRadio().click();
+            mainPage.visitedFilterRadio().click();
             expect(mainPage.cityListItems().count()).toBe(2);
-            mainPage.allRadio().click();
+            mainPage.allFilterRadio().click();
             expect(mainPage.cityListItems().count()).toBe(5);
         });
     });
 
-    describe('Sort the cities by visited state (i.e. visited or unvisited)', function() {
-        // TODO
+    ddescribe('Sort the cities by visited state (i.e. visited or unvisited)', function() {
+
+        it('sorting is shown when "all" filter is in effect', function() {
+            mainPage.get();
+            checkSortingIsVisible();
+        });
+
+        it('sorting is hidden when "visited" filter is in effect', function() {
+            mainPage.get();
+            checkSortingIsVisible();
+            mainPage.visitedFilterRadio().click();
+            checkSortingIsNotVisible();
+        });
+
+        it('sorting is hidden when "unvisited" filter is in effect', function() {
+            mainPage.get();
+            checkSortingIsVisible();
+            mainPage.unvisitedFilterRadio().click();
+            checkSortingIsNotVisible();
+        });
     });
 
     describe('Search for city by attraction or country', function() {
@@ -158,5 +176,17 @@ describe('LateRooms full-stack tech test spec', function () {
         else {
             expect(attr).not.toContain('list-group-item-success');
         }
+    }
+
+    function checkSortingIsVisible() {
+        checkSortingVisibility(true);
+    }
+
+    function checkSortingIsNotVisible() {
+        checkSortingVisibility(false);
+    }
+
+    function checkSortingVisibility(isVisible) {
+        expect(mainPage.sortingPanel().isDisplayed()).toBe(isVisible);
     }
 });
