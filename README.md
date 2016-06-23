@@ -34,6 +34,7 @@ This is my attempt at the [The LateRooms Group full-stack task](https://github.c
 * Add spinners re AJAX calls (http interceptor ?)
 * Add error handling re AJAX calls (http interceptor ?)
 * Test other browsers
+* Make the whole thing look nicer e.g. by using [Angular Material](https://material.angularjs.org) instead of [Bootstrap](http://getbootstrap.com/)
 
 ## Links
 
