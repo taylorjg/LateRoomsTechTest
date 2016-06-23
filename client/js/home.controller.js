@@ -2,9 +2,9 @@ function HomeController($uibModal, CitiesService) {
 
     const vm = this;
     vm.filter = 'all';
-    vm.sort = 'visited';
+    vm.sort = 'none';
     vm.cities = [];
-    vm.filteredCities = filteredCities;
+    vm.processedCities = processedCities;
     vm.showSortingPanel = showSortingPanel;
     vm.visitedCityCount = visitedCityCount;
     vm.unvisitedCityCount = unvisitedCityCount;
@@ -17,16 +17,38 @@ function HomeController($uibModal, CitiesService) {
         CitiesService.getCities().then(response => vm.cities = response.data);
     }
 
-    function filteredCities() {
+    function processedCities() {
+
+        let result = vm.cities.slice();
+
         switch (vm.filter) {
             case 'visited':
-                return vm.cities.filter(city => city.Visited);
+                result = result.filter(city => city.Visited);
+                break;
             case 'unvisited':
-                return vm.cities.filter(city => !city.Visited);
+                result = result.filter(city => !city.Visited);
+                break;
             case 'all':
             default:
-                return vm.cities;
+                break;
         }
+
+        if (showSortingPanel()) {
+            console.log('sorting...');
+            switch (vm.sort) {
+                case 'visited':
+                    result = result.sort((city1, city2) => city2.Visited - city1.Visited);
+                    break;
+                case 'unvisited':
+                    result = result.sort((city1, city2) => city1.Visited - city2.Visited);
+                    break;
+                case 'none':
+                default:
+                    break;
+            }
+        }
+
+        return result;
     }
 
     function showSortingPanel() {

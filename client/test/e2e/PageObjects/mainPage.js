@@ -22,6 +22,10 @@ function MainPage() {
         return element(by.id('sortingPanel'));
     }
 
+    this.noneSortRadio = function() {
+        return element(by.id('noneSortRadio'));
+    }
+
     this.visitedSortRadio = function() {
         return element(by.id('visitedSortRadio'));
     }
@@ -31,7 +35,7 @@ function MainPage() {
     }
 
     this.cityListItems = function () {
-        return element.all(by.repeater('city in vm.filteredCities()'));
+        return element.all(by.repeater('city in vm.processedCities()'));
     }
 
     this.visitedCityCount = function() {

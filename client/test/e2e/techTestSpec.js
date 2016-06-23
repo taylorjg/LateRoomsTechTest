@@ -134,7 +134,7 @@ describe('LateRooms full-stack tech test spec', function () {
         });
     });
 
-    ddescribe('Sort the cities by visited state (i.e. visited or unvisited)', function() {
+    describe('Sort the cities by visited state (i.e. visited or unvisited)', function() {
 
         it('sorting is shown when "all" filter is in effect', function() {
             mainPage.get();

@@ -34,9 +34,15 @@
             </div>
         </div>
         <div class="row" id="sortingPanel" ng-show="vm.showSortingPanel()">
+            {{ vm.sort }}
             <div class="col-md-offset-3 col-md-6">
                 <fieldset>
                     <legend>Sort by</legend>
+                    <label>
+                        <input id="noneSortRadio" type="radio" name="sort" value="none" ng-model="vm.sort">
+                        None
+                    </label>
+                    &nbsp;
                     <label>
                         <input id="visitedSortRadio" type="radio" name="sort" value="visited" ng-model="vm.sort">
                         Visited
@@ -58,7 +64,7 @@
                     </div>
                     <div class="panel-body">
                         <ul class="list-group">
-                            <div ng-repeat="city in vm.filteredCities()" city="city" on-update-city="vm.onUpdateCity(city)"></div>
+                            <div ng-repeat="city in vm.processedCities()" city="city" on-update-city="vm.onUpdateCity(city)"></div>
                         </ul>
                     </div>
                 </div>
