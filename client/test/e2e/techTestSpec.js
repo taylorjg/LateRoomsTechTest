@@ -154,6 +154,40 @@ describe('LateRooms full-stack tech test spec', function () {
             mainPage.unvisitedFilterRadio().click();
             checkSortingIsNotVisible();
         });
+
+        it('cities can be sorted by visited first', function() {
+            mainPage.get();
+            const itemsBefore = mainPage.cityListItems();
+            checkIsUnvisited(itemsBefore.get(0));
+            checkIsUnvisited(itemsBefore.get(1));
+            checkIsVisited(itemsBefore.get(2));
+            checkIsUnvisited(itemsBefore.get(3));
+            checkIsVisited(itemsBefore.get(4));
+            mainPage.visitedSortRadio().click();
+            const itemsAfter = mainPage.cityListItems();
+            checkIsVisited(itemsAfter.get(0));
+            checkIsVisited(itemsAfter.get(1));
+            checkIsUnvisited(itemsAfter.get(2));
+            checkIsUnvisited(itemsAfter.get(3));
+            checkIsUnvisited(itemsAfter.get(4));
+        });
+
+        it('cities can be sorted by unvisited first', function() {
+            mainPage.get();
+            const itemsBefore = mainPage.cityListItems();
+            checkIsUnvisited(itemsBefore.get(0));
+            checkIsUnvisited(itemsBefore.get(1));
+            checkIsVisited(itemsBefore.get(2));
+            checkIsUnvisited(itemsBefore.get(3));
+            checkIsVisited(itemsBefore.get(4));
+            mainPage.unvisitedSortRadio().click();
+            const itemsAfter = mainPage.cityListItems();
+            checkIsUnvisited(itemsAfter.get(0));
+            checkIsUnvisited(itemsAfter.get(1));
+            checkIsUnvisited(itemsAfter.get(2));
+            checkIsVisited(itemsAfter.get(3));
+            checkIsVisited(itemsAfter.get(4));
+        });
     });
 
     describe('Search for city by attraction or country', function() {

@@ -22,6 +22,14 @@ function MainPage() {
         return element(by.id('sortingPanel'));
     }
 
+    this.visitedSortRadio = function() {
+        return element(by.id('visitedSortRadio'));
+    }
+
+    this.unvisitedSortRadio = function() {
+        return element(by.id('unvisitedSortRadio'));
+    }
+
     this.cityListItems = function () {
         return element.all(by.repeater('city in vm.filteredCities()'));
     }
