@@ -36,3 +36,4 @@ This is my attempt at the [The LateRooms Group full-stack task](https://github.c
 ## Links
 
 * [The LateRooms Group full-stack task](https://github.com/LateRoomsGroup/interview-katas/blob/master/full-stack.md)
+* [Protractor API Documentation](http://www.protractortest.org/#/api)

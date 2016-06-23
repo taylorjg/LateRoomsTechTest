@@ -70,7 +70,28 @@ describe('LateRooms full-stack tech test spec', function () {
         });
 
         describe('Provide basic validation', function() {
-            // TODO
+
+            it('OK button is disabled if city field is blank', function() {
+                mainPage.get();
+                mainPage.addCityBtn().click();
+                addCityDialog.country().sendKeys('France');
+                expect(addCityDialog.okBtn().isEnabled()).toBe(false);
+            });
+
+            it('OK button is disabled if country field is blank', function() {
+                mainPage.get();
+                mainPage.addCityBtn().click();
+                addCityDialog.city().sendKeys('Paris');
+                expect(addCityDialog.okBtn().isEnabled()).toBe(false);
+            });
+
+            it('OK button is enabled if city and country fields are populated', function() {
+                mainPage.get();
+                mainPage.addCityBtn().click();
+                addCityDialog.city().sendKeys('Paris');
+                addCityDialog.country().sendKeys('France');
+                expect(addCityDialog.okBtn().isEnabled()).toBe(true);
+            });
         });
     });
 
