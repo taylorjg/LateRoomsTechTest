@@ -18,8 +18,9 @@ This is my attempt at the [The LateRooms Group full-stack task](https://github.c
 
 ## TODO
 
-* Add tests re validation in the Add City dialog
-    * Implement validation in the Add City dialog
+* ~~Add tests re validation in the Add City dialog~~
+    * ~~Implement basic validation in the Add City dialog~~
+    * Make the validation look a bit prettier
 * ~~Implement missing in-memory server-side services:~~
     * ~~Add city~~
     * ~~Update city~~
@@ -32,6 +33,7 @@ This is my attempt at the [The LateRooms Group full-stack task](https://github.c
 * Deploy to [Heroku](https://www.heroku.com/)
 * Add spinners re AJAX calls (http interceptor ?)
 * Add error handling re AJAX calls (http interceptor ?)
+* Test other browsers
 
 ## Links
 

@@ -3,7 +3,7 @@
     <h3>Add City</h3>
 </div>
 
-<form novalidate>
+<form name="addCityForm" novalidate>
     <div class="modal-body">
         <div class="form-group">
             <label class="control-label" for="city">City</label>
@@ -35,7 +35,7 @@
     </div>
 
     <div class="modal-footer">
-        <button type="submit" id="okBtn" class="btn btn-sm btn-primary" ng-click="vm.onOk()">OK</button>
+        <button type="submit" id="okBtn" class="btn btn-sm btn-primary" ng-click="vm.onOk()" ng-disabled="addCityForm.$invalid">OK</button>
         <button type="button" id="cancelBtn" class="btn btn-sm btn-warning" ng-click="vm.onCancel()">Cancel</button>
     </div>
 </form>
