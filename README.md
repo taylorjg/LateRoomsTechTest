@@ -6,19 +6,19 @@ This is my attempt at the [The LateRooms Group full-stack task](https://github.c
 
 ### Main Page
 
-![Main Page](Images/MainPageScreenshot.png)
+![Main Page](screenshots/MainPageScreenshot.png)
 
 ### Add City Dialog
 
-![Add City Dialog](Images/AddCityDialogScreenshot.png)
+![Add City Dialog](screenshots/AddCityDialogScreenshot.png)
 
 ### Validation in the Add City Dialog
 
-![Add City Dialog Validation](Images/AddCityDialogValidationScreenshot.png)
+![Add City Dialog Validation](screenshots/AddCityDialogValidationScreenshot.png)
 
 ### Protractor Tests 
 
-![Protractor Tests](Images/ProtractorScreenshot.png)
+![Protractor Tests](screenshots/ProtractorScreenshot.png)
 
 ## TODO
 
