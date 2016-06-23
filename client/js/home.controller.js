@@ -19,36 +19,25 @@ function HomeController($uibModal, CitiesService) {
 
     function processedCities() {
 
-        let result = vm.cities.slice();
+        let filterFn = () => true;
+        let sortFn = () => 0;
 
         switch (vm.filter) {
-            case 'visited':
-                result = result.filter(city => city.Visited);
-                break;
-            case 'unvisited':
-                result = result.filter(city => !city.Visited);
-                break;
-            case 'all':
-            default:
-                break;
+            case 'visited': filterFn = (city => city.Visited); break;
+            case 'unvisited': filterFn = (city => !city.Visited); break;
         }
 
         if (showSortingPanel()) {
-            console.log('sorting...');
             switch (vm.sort) {
-                case 'visited':
-                    result = result.sort((city1, city2) => city2.Visited - city1.Visited);
-                    break;
-                case 'unvisited':
-                    result = result.sort((city1, city2) => city1.Visited - city2.Visited);
-                    break;
-                case 'none':
-                default:
-                    break;
+                case 'visited': sortFn = (city1, city2) => city2.Visited - city1.Visited; break;
+                case 'unvisited': sortFn = (city1, city2) => city1.Visited - city2.Visited; break;
             }
         }
 
-        return result;
+        return vm.cities
+            .slice()
+            .filter(filterFn)
+            .sort(sortFn);
     }
 
     function showSortingPanel() {
