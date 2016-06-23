@@ -23,10 +23,12 @@
         </div>
         <div ng-show="vm.item.Attractions.length">
             Attractions:
-            <ul>
+            <ul class="list-inline">
                 <li ng-repeat="attraction in vm.item.Attractions">
-                    {{ attraction }}
-                    <span class="glyphicon glyphicon-remove" ng-click="vm.onRemoveAttraction($index)" aria-hidden="true"></span>
+                    <span class="badge">
+                        {{ attraction }}
+                        <span class="glyphicon glyphicon-remove" ng-click="vm.onRemoveAttraction($index)" aria-hidden="true"></span>
+                    </span>
                 </li>
             </ul>
         </div>
