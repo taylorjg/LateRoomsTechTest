@@ -20,9 +20,9 @@ This is my attempt at the [The LateRooms Group full-stack task](https://github.c
 
 * Add tests re validation in the Add City dialog
     * Implement validation in the Add City dialog
-* Implement missing in-memory server-side services:
-    * Add city
-    * Update city
+* ~~Implement missing in-memory server-side services:~~
+    * ~~Add city~~
+    * ~~Update city~~
 * Add MongoDB support to the server-side
 * Implement missing feature: "Search for city by attraction or country"
 * Webpack:
