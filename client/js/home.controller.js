@@ -1,9 +1,11 @@
 function HomeController($uibModal, CitiesService) {
 
     const vm = this;
-    vm.filter = "all";
+    vm.filter = 'all';
+    vm.sort = 'visited';
     vm.cities = [];
     vm.filteredCities = filteredCities;
+    vm.showSortingPanel = showSortingPanel;
     vm.visitedCityCount = visitedCityCount;
     vm.unvisitedCityCount = unvisitedCityCount;
     vm.onUpdateCity = onUpdateCity;
@@ -17,14 +19,18 @@ function HomeController($uibModal, CitiesService) {
 
     function filteredCities() {
         switch (vm.filter) {
-            case "visited":
+            case 'visited':
                 return vm.cities.filter(city => city.Visited);
-            case "unvisited":
+            case 'unvisited':
                 return vm.cities.filter(city => !city.Visited);
-            case "all":
+            case 'all':
             default:
                 return vm.cities;
         }
+    }
+
+    function showSortingPanel() {
+        return vm.filter === 'all';
     }
 
     function visitedCityCount() {
