@@ -6,15 +6,15 @@ This is my attempt at the [The LateRooms Group full-stack task](https://github.c
 
 ### Main Page
 
-[Main Page](Images/MainPageScreenshot.png)
+![Main Page](Images/MainPageScreenshot.png)
 
 ### Add City Dialog
 
-[Add City Dialog](Images/AddCityDialogScreenshot.png)
+![Add City Dialog](Images/AddCityDialogScreenshot.png)
 
 ### Protractor Tests 
 
-[Protractor Tests](Images/ProtractorScreenshot.png)
+![Protractor Tests](Images/ProtractorScreenshot.png)
 
 ## Links
 
