@@ -3,21 +3,25 @@
     <h3>Add City</h3>
 </div>
 
-<form name="addCityForm" novalidate>
+<form name="form" novalidate>
     <div class="modal-body">
-        <div class="form-group">
+        <div class="form-group" ng-class="vm.feedbackClasses(form.cityControl)">
             <label class="control-label" for="city">City</label>
             <input id="city" type="text" class="form-control" name="cityControl" ng-required="true" ng-model="vm.item.City" />
+            <span ng-show="form.cityControl.$valid && form.cityControl.$touched" class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+            <span ng-show="form.cityControl.$invalid && form.cityControl.$touched" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+            <div ng-show="form.cityControl.$error.required && form.cityControl.$touched" class="help-block">Please enter the name of a city</div>
         </div>
-        <div class="form-group">
+        <div class="form-group" ng-class="vm.feedbackClasses(form.countryControl)">
             <label class="control-label" for="country">Country</label>
-            <input id="country" type="text" class="form-control" name="countryControl" ng-required="true" ng-model="vm.item.Country"
-            />
+            <input id="country" type="text" class="form-control" name="countryControl" ng-required="true" ng-model="vm.item.Country" />
+            <span ng-show="form.countryControl.$valid && form.countryControl.$touched" class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+            <span ng-show="form.countryControl.$invalid && form.countryControl.$touched" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+            <div ng-show="form.countryControl.$error.required && form.countryControl.$touched" class="help-block">Please enter the name of a country</div>
         </div>
         <div class="form-group">
             <label class="control-label" for="attraction">Attraction</label>
-            <input id="attraction" type="text" class="form-control" name="attractionControl" ng-required="false" ng-model="vm.attraction"
-            />
+            <input id="attraction" type="text" class="form-control" name="attractionControl" ng-required="false" ng-model="vm.attraction" />
             <br />
             <button type="button" id="addAttractionBtn" class="btn btn-sm btn-primary" ng-click="vm.onAddAttraction()">Add Attraction</button>
         </div>
@@ -35,7 +39,7 @@
     </div>
 
     <div class="modal-footer">
-        <button type="submit" id="okBtn" class="btn btn-sm btn-primary" ng-click="vm.onOk()" ng-disabled="addCityForm.$invalid">OK</button>
+        <button type="submit" id="okBtn" class="btn btn-sm btn-primary" ng-click="vm.onOk()" ng-disabled="form.$invalid">OK</button>
         <button type="button" id="cancelBtn" class="btn btn-sm btn-warning" ng-click="vm.onCancel()">Cancel</button>
     </div>
 </form>

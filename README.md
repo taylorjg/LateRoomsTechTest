@@ -12,6 +12,10 @@ This is my attempt at the [The LateRooms Group full-stack task](https://github.c
 
 ![Add City Dialog](Images/AddCityDialogScreenshot.png)
 
+### Validation in the Add City Dialog
+
+![Add City Dialog Validation](Images/AddCityDialogValidationScreenshot.png)
+
 ### Protractor Tests 
 
 ![Protractor Tests](Images/ProtractorScreenshot.png)
@@ -20,7 +24,7 @@ This is my attempt at the [The LateRooms Group full-stack task](https://github.c
 
 * ~~Add tests re validation in the Add City dialog~~
     * ~~Implement basic validation in the Add City dialog~~
-    * Make the validation look a bit prettier
+    * ~~Make the validation look a bit prettier~~
 * ~~Implement missing in-memory server-side services:~~
     * ~~Add city~~
     * ~~Update city~~

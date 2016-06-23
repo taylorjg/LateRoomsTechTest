@@ -5,6 +5,7 @@ function AddCityDialogController($uibModalInstance) {
     vm.onCancel = onCancel;
     vm.onAddAttraction = onAddAttraction;
     vm.onRemoveAttraction = onRemoveAttraction;
+    vm.feedbackClasses = feedbackClasses;
     vm.item = {
         City: '',
         Country: '',
@@ -28,6 +29,14 @@ function AddCityDialogController($uibModalInstance) {
 
     function onRemoveAttraction(index) {
         vm.item.Attractions.splice(index, 1);
+    }
+
+    function feedbackClasses(c) {
+        return {
+            'has-feedback': c.$touched,
+            'has-success': c.$touched && c.$valid,
+            'has-error': c.$touched && c.$invalid
+        };
     }
 }
 
