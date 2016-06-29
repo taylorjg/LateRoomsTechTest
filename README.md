@@ -20,6 +20,10 @@ This is my attempt at the [The LateRooms Group full-stack task](https://github.c
 
 ![Protractor Tests](screenshots/ProtractorScreenshot.png)
 
+### Unit Tests
+
+![Protractor Tests](screenshots/UnitTestsScreenshot.png)
+
 ## TODO
 
 * ~~Add tests re validation in the Add City dialog~~
