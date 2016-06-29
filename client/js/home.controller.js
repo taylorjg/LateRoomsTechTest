@@ -3,6 +3,7 @@ function HomeController($uibModal, CitiesService) {
     const vm = this;
     vm.filter = 'all';
     vm.sort = 'none';
+    vm.search = '';
     vm.cities = [];
     vm.processedCities = processedCities;
     vm.showSortingPanel = showSortingPanel;
@@ -20,11 +21,20 @@ function HomeController($uibModal, CitiesService) {
     function processedCities() {
 
         let filterFn = () => true;
+        let searchFn = () => true;
         let sortFn = () => 0;
 
         switch (vm.filter) {
             case 'visited': filterFn = (city => city.Visited); break;
             case 'unvisited': filterFn = (city => !city.Visited); break;
+        }
+
+        if (vm.search) {
+            var loweredSearch = vm.search.toLowerCase();
+            searchFn = (city => {
+                return city.Country.toLowerCase().includes(loweredSearch) ||
+                    city.Attractions.filter(a => a.toLowerCase().includes(loweredSearch)).length > 0;
+            });
         }
 
         if (showSortingPanel()) {
@@ -37,6 +47,7 @@ function HomeController($uibModal, CitiesService) {
         return vm.cities
             .slice()
             .filter(filterFn)
+            .filter(searchFn)
             .sort(sortFn);
     }
 
