@@ -37,7 +37,7 @@ This is my attempt at the [The LateRooms Group full-stack task](https://github.c
 * Webpack:
     * Do minification
     * Include bootstrap.css
-    * Support environments (dev/prod)
+    * Support different environments (dev/test/prod)
 * Deploy to [Heroku](https://www.heroku.com/)
 * Add spinners re AJAX calls (http interceptor ?)
 * Add error handling re AJAX calls (http interceptor ?)
